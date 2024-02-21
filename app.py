@@ -124,9 +124,11 @@ with st.expander("RATEIOS"):
         select_data2 = st.date_input("Data de Emissão:")
         if select_data2:
             data_emissao = select_data2.strftime("%d/%m/%Y")
+            data_emissao = datetime.datetime.strptime(data_emissao, "%d/%m/%Y")
         select_data3 = st.date_input("Data de Vencimento:")
         if select_data3:
             data_vencimento = select_data3.strftime("%d/%m/%Y")
+            data_vencimento = datetime.datetime.strptime(data_vencimento, "%d/%m/%Y")
         select_tipo = st.selectbox('Selecione o Conceito:',('Contas a Pagar', 'Contas a Receber'))
         if select_tipo:
             dataselect_tipo_vencimento = str(select_tipo)
